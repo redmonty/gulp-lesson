@@ -1,2 +1,337 @@
+@import ../libs/bootstrap-sass/assets/stylesheets/bootstrap.scss
+
+/*generan styles*/
+body, html 
+    padding: 0
+    margin: 0
+    height: 100%
 body
-	background-color: pink
+    background: #f6f6f6
+    color: #2d2d2d
+    font-family: 'Arial, Helvetica, sans-serif'
+    font-size: 16px
+    line-height: 1.5
+h1
+    font-size: 1.5em
+h2
+    font-size: 1.375em
+h2
+    font-size: 1.25em
+h4, h5, h6
+    font-size: 1.125em
+
+a
+    color: #ca6a96
+    &:hover
+        color: #e889b4
+
+header, footer, main 
+    width: 100%
+
+.page-wrapper
+    width: 100%
+    height: 100%
+    margin: 0 auto
+    max-width: 1200px
+    padding: 0 10px
+    box-sizing: border-box // чтоб паддинг вошел в 1200 пикселей, не увеличив ширину страници
+    display: flex
+    flex-direction: column
+
+header
+    padding: 50px 0 30px
+    display: flex
+    flex-grow: 0//сколько места занимает, все место
+    flex-direction: row//распределение внутри контейнера
+    justify-content: space-between//блоги горизонтально распределятся
+    align-items: center//займут центр во вертикальной оси
+    nav#language
+        margin: 0 0 10px 0
+        //background-color: red
+        display: flex
+        flex-direction: row-reverse
+        & ul li
+            background: #2d2d2d
+            color: #f6f6f6
+            padding: 4px 6px
+            border-radius: 50%
+            transition: .2s
+            font-size: .7em
+            &:hover, &.active
+                background: #ca6a96
+                transition: .2s
+            & a
+                color: #f6f6f6
+                border-bottom: none
+
+header ul li , footer ul li
+    display: inline-block
+    margin: 0 20px 0 0
+    text-transform: uppercase
+    font-weight: 600
+    font-size: .75em
+    letter-spacing: 1px
+header ul a, footer ul a
+    color: #2d2d2d
+    text-decoration: none
+    display: inline-block
+    border-bottom: 2px solid transparent
+    transition: .2s
+    &:hover, &.active
+        color: #2d2d2d
+        border-bottom: 2px solid #2d2d2d
+        transition: .2s
+
+.article-holder
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    padding: 10px 0
+    margin: 30px 0 0 0
+    article
+        background: #ffffff
+        margin: 10px 0 0 0
+        flex-basis: calc(33% - 4px)//размер 1/3 макета
+        a
+            text-decoration: none
+            display: flex
+            flex-direction: column
+            height: 100%
+        .details
+            padding: 30px
+            box-sizing: border-box
+            font-size: .9em
+            color: #7d7d7d
+            flex-grow: 1
+        h2
+            font-weight: 400
+            color: #2d2d2d
+            font-size: 1.15em
+        img
+            width: 100%
+            height: auto
+            opacify: 1
+            transition: .3s
+        &:hover img
+            opacify: .75
+            transition: .3s
+        .secondary
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            padding: 0 20px 30px
+            box-sizing: border-box
+            font-size: .8em
+            .views
+                font-size: 1em
+                font-weight: 600
+                display: block
+                position: relative
+                padding: 0 0 0 16px
+                &:after
+                    display: block
+                    position: absolute
+                    content: '¥'
+                    top: 0
+                    left: 0
+.more
+    margin: 20px auto 10px
+    background: #ca6a96
+    color: #ffffff
+    border-radius: 5px
+    padding: 4px 10px
+    transition: .2s
+    cursor: pointer
+    display: table
+    &:hover
+        background: #e889b4
+        transition: .2s
+
+footer
+    flex-grow: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 40px 0
+    border-top: 1px solid #d4d4d4
+
+main h1, main h2, main h3, main h4 
+    text-transform: uppercase
+    letter-spacing: 1px
+    color: #2d2d2d
+    margin: 0 0 20px 0
+main h1
+    text-align: center
+    margin: 30px 0 50px
+
+.scrolltop
+    position: fixed
+    bottom: 40px
+    right: 40px
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    background: rgba(0,0,0,.75)
+    opacify: .75
+    cursor: pointer
+    transition: .3s
+    &:hover
+        opacity: 1
+        transition: .3s
+    &:after
+        content: "∆"
+        width: 100%
+        text-align: center
+        line-height: 40px
+        position: absolute
+        top: 0
+        left: 0
+        color: #ffffff
+    
+
+    /* Стили статтей */
+.article-wrapper
+    display: flex
+    height: 100%
+    width: 100%
+    margin: 40px 0 0 0
+    .details
+        padding: 10px
+    article .details
+        padding: 20px
+    article
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        background: #ffffff
+        margin: 0 20px 20px 0
+        width: 70%
+        max-width: calc(100% - 320px)
+        flex-grow: 1
+        h1
+            margin: 30px 0
+        .secondary
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            font-size: .9em
+            color: #999999
+        img
+            margin: 0 0 20px 0
+            width: 100%
+            height: auto
+    aside
+        display: flex
+        flex-direction: column
+        width: 30%
+        max-width: 300px
+        a
+            text-decoration: none
+            display: block
+            background: #ffffff
+            margin: 0 0 20px 0
+        .tags
+            display: flex
+            flex-flow: row wrap
+            background: #ffffff
+            padding: 20px
+            margin: 0 0 20px 0
+            a
+                background: #ca6a96
+                color: #ffffff
+                border-radius: 5px
+                padding: 4px 10px
+                margin: 0 10px 10px 0
+                transition: .2s
+                &:hover
+                    background: #e889b4
+                    transition: .2s
+        p
+            font-size: .9em
+            line-height: 1.4
+            color: #666666
+        h2
+            text-transform: none
+            font-size: 1.1em
+            line-height: 1.3
+            margin: 0 0 12px 0
+        img
+            width: 100%
+            height: auto
+
+
+.notfoundpage
+    text-align: center
+    font-size: 2em
+    margin: 30px 0
+    p
+        margin: 0 0 20px 0
+    .small
+        font-size: 1.4em
+    h1
+        font-size: 4em
+    .sad
+        position: relative
+        min-height: 120px
+        &:after
+            position: absolute
+            content: '©'
+            color: #999999
+            font-size: 7em
+            line-height: 1
+            width: 100%
+            top: 0
+            left: 0
+
+
+@media (max-width: 800px)
+    header
+        display: block
+        padding: 10px 0 0 0
+        nav#language
+            margin: 20px 0 10px
+            flex-direction: row
+        ul li
+            margin: 0 20px 20px 0
+    main h1
+        margin: 20px 0 30px
+    .article.holder
+        margin: 20px 0 0 0
+        article
+            flex-basis: calc(50% - 5px)
+    .scrolltop
+        bottom: 20px
+        right: 20px
+    .article-wrapper
+        flex-direction: column
+        article
+            display: block
+            margin: 0 0 20px 0
+            max-width: 100%
+            width: 100%
+        aside
+            max-width: 100%
+            width: 100%
+        aside img
+            width: 50%
+            border-radius: 50%
+            margin-left: 10px
+        aside a
+            display: flex
+            flex-direction: row
+            align-items: center
+            margin: 0 0 10px 0
+
+@media (max-width: 600px)
+    .article-holder article
+        flex-basis: 100%
+    .scrolltop
+        bottom: 10px
+        right: 10px
+
+
+
+
+
+
